@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lalith Kota - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-amber-200 selection:text-amber-900 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 sm:px-12 md:px-16 py-10 sm:py-16 space-y-16 sm:space-y-20">
+
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200/80 pb-6">
+            <div>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-light text-stone-900 tracking-tight leading-[1.15]">
+                    <span class="font-semibold decoration-amber-300 decoration-4">Lalith Kota</span>
+                </h1>
+                <p class="mt-1 text-sm font-medium text-amber-800 tracking-wide uppercase">Software Development Engineer | Tech Enthusiast</p>
+            </div>
+
+            <!-- Location & Socials -->
+            <div class="flex flex-col sm:items-end text-xs sm:text-sm text-stone-500 space-y-1.5 font-light">
+                <span class="inline-flex items-center gap-1.5 text-stone-600">
+                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    India
+                </span>
+                <div class="flex items-center gap-3 pt-0.5">
+                    <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">GitHub</a>
+                    <span class="text-stone-300">/</span>
+                    <a href="https://in.linkedin.com/in/lalith-kota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page info -->
+        <section class="!mt-8 space-y-3">
+            <p class="text-stone-500 font-light text-sm sm:text-base">
+                <span class="text-base font-semibold text-stone-900">Portfolio</span>
+                 - This page contains a brief description of my works, experience, qualifications and technical skills.
+            </p>
+        </section>
+
+        <!-- Brief -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Myself Briefly</h2>
+            <div class="space-y-6 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
+                <p>
+                    From kernel development in Rust to building my own Python libraries, I've always loved digging
+                    into code. As an open-source evangelist, I get my hands dirty with the tech I believe in: on-prem
+                    AI deployments, multi-agent orchestration, and production-grade DevOps on Kubernetes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Key Works -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Key Works</h2>
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <div class="flex items-baseline justify-between gap-4">
+                        <h3 class="text-base font-semibold text-stone-900 hover:underline"><a href="https://lalithkota.github.io/pyboot" target="_blank">Pyboot</a></h3>
+                        <span class="text-xs text-stone-400 font-mono">Open Source</span>
+                    </div>
+                    <p class="text-sm text-stone-600 leading-relaxed font-light">
+                        A collection of Python libraries and utilities that help make bootstrapping applications such as REST APIs, worker tasks, and database layers convenient, with an inversion-of-control (IoC) architecture.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Experience</h2>
+            <div class="space-y-6 text-sm font-light">
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                        <div>
+                            <h3 class="font-medium text-stone-900">Senior Software Development Engineer — OpenG2P</h3>
+                            <p class="text-xs text-stone-500">Full-time · Bengaluru, India</p>
+                        </div>
+                        <span class="text-xs text-stone-400 font-mono">2023 — 2025</span>
+                    </div>
+                    <div class="space-y-3 text-stone-600">
+                        <p>Designed & Developed key legacy components of multiple OpenG2P modules like Social Registry and PBMS upon which the modern OpenG2P modules derive from.</p>
+                        <p>Also developed boilerplate python modules which act as base for multiple OpenG2P modules.</p>
+                        <p>Designed deployment architecture and developed scripts and helm charts which are used to deploy OpenG2P modules, just by a single-click through the UI</p>
+                        <p>Worked on integrating OpenG2P with other platforms like MOSIP, Mifos, OpenCRVS, Mojaloop.</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                        <div>
+                            <h3 class="font-medium text-stone-900">Software Development Engineer — MOSIP</h3>
+                            <p class="text-xs text-stone-500">Full-time · Bengaluru, India</p>
+                        </div>
+                        <span class="text-xs text-stone-400 font-mono">2021 — 2023</span>
+                    </div>
+                    <div class="space-y-3 text-stone-600">
+                        <p>Designed a modern Kubernetes Deployment architecture for MOSIP modules.</p>
+                        <p>Developed a framework for generating and displaying reports and based on real-time data from the system.</p>
+                        <p>Worked on integrating MOSIP with other platforms like OpenCRVS and OpenG2P on all applicable integration points.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Minor Works -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Other Works</h2>
+            <div class="space-y-6 text-sm font-light">
+                <div class="space-y-1">
+                    <h3 class="font-medium text-stone-900"><a href="https://github.com/lalithkota/csnel" target="_blank" class="hover:underline">Csnel</a></h3>
+                    <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
+                        Builds and runs unikernels written in Rust. Unikernels are single-process programs where kernel itself is the user application.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Qualifications -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Qualifications</h2>
+            <div class="space-y-6 text-sm font-light">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 pt-2 border-t border-stone-200/60">
+                    <div>
+                        <h3 class="font-medium text-stone-900">Master of Technology (Integrated M.Tech with B.Tech) in Electronics & Communication Engineering</h3>
+                        <p class="text-xs text-stone-500">International Institute of Information Technology, Bangalore</p>
+                    </div>
+                    <span class="text-xs text-stone-400 font-mono">Graduated</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Technical Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm font-light text-stone-600">
+                <div>
+                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Languages</span>
+                    <p>Python, Java, JavaScript / TypeScript, Rust, Jinja, Bash</p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Frameworks & Backend</span>
+                    <p>FastAPI, Odoo, Django, RESTful APIs</p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Databases & Storage</span>
+                    <p>PostgreSQL, MySQL, SQLite, Redis, SQLAlchemy</p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">DevOps & Cloud</span>
+                    <p>Docker, Kubernetes, Helm, AWS, Linux, Git, CI/CD pipelines</p>
+                </div>
+                <div>
+                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Architecture & Concepts</span>
+                    <p>Microservices, System Design, Distributed Systems, Inversion of Control (IoC), Cryptography </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="pb-12 scroll-mt-10">
+            <footer class="pt-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-400 border-t border-stone-200/60">
+                <p>© 2026 Kota Lalith. Licensed under <a href="LICENSE" class="underline underline-offset-2 hover:text-stone-600 transition-colors">CC-BY-SA-4.0</a>.</p>
+            </footer>
+        </section>
+
+    </div>
+</body>
+</html>

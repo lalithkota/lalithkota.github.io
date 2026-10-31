@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lalith Kota</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a29e;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-amber-200 selection:text-amber-900 min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 sm:px-12 md:px-16 py-10 sm:py-16 space-y-16 sm:space-y-20">
+
+        <!-- Header -->
+        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200/80 pb-6">
+            <div>
+                <h1 class="text-2xl sm:text-3xl md:text-4xl font-light text-stone-900 tracking-tight leading-[1.15]">
+                    <span class="font-semibold decoration-amber-300 decoration-4">Lalith Kota</span>
+                </h1>
+            </div>
+
+            <!-- Location & Socials -->
+            <div class="flex flex-col sm:items-end text-xs sm:text-sm text-stone-500 space-y-1.5 font-light">
+                <span class="inline-flex items-center gap-1.5 text-stone-600">
+                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    India
+                </span>
+                <div class="flex items-center gap-3 pt-0.5">
+                    <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">GitHub</a>
+                    <span class="text-stone-300">/</span>
+                    <a href="https://in.linkedin.com/in/lalith-kota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">LinkedIn</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">About</h2>
+            <div class="gap-8 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
+                <p>
+                    Software Development Engineer by profession. Pop culture aficionado. Love eating, sleeping and repeating.
+                    I watch movies with passion and play a videogames in my free time.
+                </p>
+            </div>
+        </section>
+
+        <!-- Work -->
+         <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase"><a href="portfolio" target="_blank" class="hover:underline">Work</a></h2>
+            <div class="gap-8 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
+                <p>
+                    If you want to know more about my work, profession and technical experience, visit my <a href="portfolio" target="_blank" class="hover:underline">portfolio</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog -->
+         <section class="space-y-6">
+            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase"><a href="blog" target="_blank" class="hover:underline">Blog</a></h2>
+            <div class="gap-8 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
+                <p>
+                    Take a look at my <a href="blog" target="_blank" class="hover:underline">blog</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="pb-12 scroll-mt-10">
+            <footer class="pt-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-400 border-t border-stone-200/60">
+                <p>© 2026 Kota Lalith. Licensed under <a href="LICENSE" class="underline underline-offset-2 hover:text-stone-600 transition-colors">CC-BY-SA-4.0</a>.</p>
+                <p class="font-mono text-[11px] text-stone-400">Hyderabad, India</p>
+            </footer>
+        </section>
+
+    </div>
+</body>
+</html>
