@@ -4,192 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lalith Kota - Portfolio</title>
+    <script>
+        // Synchronize initial theme with system preference immediately before render
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        // Listen for live system theme changes (desktop and mobile OS auto-switch)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f5f5f4;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d6d3d1;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a8a29e;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        html.dark ::-webkit-scrollbar-track { background: #09090b; }
+        html.dark ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 9999px; }
+        html:not(.dark) ::-webkit-scrollbar-track { background: #f4f4f5; }
+        html:not(.dark) ::-webkit-scrollbar-thumb { background: #d4d4d8; border-radius: 9999px; }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 antialiased selection:bg-amber-200 selection:text-amber-900 min-h-screen">
-    <div class="max-w-4xl mx-auto px-6 sm:px-12 md:px-16 py-10 sm:py-16 space-y-16 sm:space-y-20">
+<body class="bg-white dark:bg-[#09090b] text-zinc-700 dark:text-zinc-300 antialiased selection:bg-zinc-200 dark:selection:bg-zinc-800 selection:text-emerald-700 dark:selection:text-emerald-400 min-h-screen flex flex-col justify-between transition-colors duration-200">
+
+    <div class="max-w-3xl mx-auto px-6 sm:px-8 py-12 sm:py-20 w-full space-y-16">
 
         <!-- Header -->
-        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200/80 pb-6">
-            <div>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl font-light text-stone-900 tracking-tight leading-[1.15]">
-                    <span class="font-semibold decoration-amber-300 decoration-4">Lalith Kota</span>
-                </h1>
-                <p class="mt-1 text-sm font-medium text-amber-800 tracking-wide uppercase">Software Development Engineer | Tech Enthusiast</p>
+        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-200 dark:border-zinc-800/80 pb-8">
+            <div class="space-y-1">
+                <a href="/" class="group inline-flex items-center gap-2">
+                    <span class="text-xl sm:text-2xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">Lalith Kota</span>
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                </a>
+                <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">Software Development Engineer · Systems & Cloud</p>
             </div>
 
-            <!-- Location & Socials -->
-            <div class="flex flex-col sm:items-end text-xs sm:text-sm text-stone-500 space-y-1.5 font-light">
-                <span class="inline-flex items-center gap-1.5 text-stone-600">
-                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                    India
-                </span>
-                <div class="flex items-center gap-3 pt-0.5">
-                    <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">GitHub</a>
-                    <span class="text-stone-300">/</span>
-                    <a href="https://in.linkedin.com/in/lalith-kota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">LinkedIn</a>
-                </div>
-            </div>
+            <!-- Navigation Links -->
+            <nav class="flex items-center gap-5 text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                <a href="/" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Home</a>
+                <a href="." class="text-emerald-600 dark:text-emerald-400 font-semibold border-b border-emerald-600 dark:border-emerald-400 pb-0.5">Portfolio</a>
+                <div class="h-3 w-px bg-zinc-300 dark:bg-zinc-800 mx-1"></div>
+                <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">GitHub ↗</a>
+                <a href="https://in.linkedin.com/in/lalith-kota" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">LinkedIn ↗</a>
+            </nav>
         </header>
 
-        <!-- Page info -->
-        <section class="!mt-8 space-y-3">
-            <p class="text-stone-500 font-light text-sm sm:text-base">
-                <span class="text-base font-semibold text-stone-900">Portfolio</span>
-                 - This page contains a brief description of my works, experience, qualifications and technical skills.
+        <!-- Brief Intro -->
+        <section class="space-y-4">
+            <h1 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Overview</h1>
+            <p class="text-zinc-700 dark:text-zinc-300 leading-relaxed text-base font-light">
+                From low-level Rust unikernel development to architecting multi-country digital public infrastructure on Kubernetes. I specialize in backend frameworks, container orchestration, systems design, and building open-source tooling.
             </p>
         </section>
 
-        <!-- Brief -->
+        <!-- Featured Projects -->
         <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Myself Briefly</h2>
-            <div class="space-y-6 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
-                <p>
-                    From kernel development in Rust to building my own Python libraries, I've always loved digging
-                    into code. As an open-source evangelist, I get my hands dirty with the tech I believe in: on-prem
-                    AI deployments, multi-agent orchestration, and production-grade DevOps on Kubernetes.
-                </p>
-            </div>
-        </section>
+            <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Key Projects</h2>
+            <div class="space-y-4">
 
-        <!-- Key Works -->
-        <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Key Works</h2>
-            <div class="space-y-6">
-                <div class="space-y-2">
+                <div class="relative p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all space-y-3">
                     <div class="flex items-baseline justify-between gap-4">
-                        <h3 class="text-base font-semibold text-stone-900 hover:underline"><a href="https://lalithkota.github.io/pyboot" target="_blank">Pyboot</a></h3>
-                        <span class="text-xs text-stone-400 font-mono">Open Source</span>
+                        <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                            <a href="https://lalithkota.github.io/pyboot" target="_blank" class="after:absolute after:inset-0 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                                Pyboot ↗
+                            </a>
+                        </h3>
+                        <span class="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800/50">
+                            Open Source
+                        </span>
                     </div>
-                    <p class="text-sm text-stone-600 leading-relaxed font-light">
-                        A collection of Python libraries and utilities that help make bootstrapping applications such as REST APIs, worker tasks, and database layers convenient, with an inversion-of-control (IoC) architecture.
+                    <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-light">
+                        A modular Python framework built around Inversion-of-Control (IoC) principles. Streamlines bootstrapping for REST APIs, background worker tasks, and database integration layers.
                     </p>
                 </div>
+
+                <div class="relative p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all space-y-3">
+                    <div class="flex items-baseline justify-between gap-4">
+                        <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                            <a href="https://github.com/lalithkota/csnel" target="_blank" class="after:absolute after:inset-0 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                                Csnel ↗
+                            </a>
+                        </h3>
+                        <span class="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800/50">
+                            Systems / Rust
+                        </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 font-light">
+                        Toolchain to construct and execute lightweight unikernels written in Rust—compiling application code directly into single-purpose bootable kernel images.
+                    </p>
+                </div>
+
             </div>
         </section>
 
-        <!-- Experience -->
+        <!-- Experience Timeline -->
         <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Experience</h2>
-            <div class="space-y-6 text-sm font-light">
-                <div class="space-y-6">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Experience</h2>
+            <div class="space-y-8 relative before:absolute before:inset-0 before:left-[7px] before:w-px before:bg-zinc-200 dark:before:bg-zinc-800">
+
+                <!-- Role 1 -->
+                <div class="relative pl-7 space-y-3">
+                    <div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-[#09090b]"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                         <div>
-                            <h3 class="font-medium text-stone-900">Senior Software Development Engineer — OpenG2P</h3>
-                            <p class="text-xs text-stone-500">Full-time · Bengaluru, India</p>
+                            <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100">Senior Software Development Engineer · OpenG2P</h3>
+                            <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">Bengaluru, India</p>
                         </div>
-                        <span class="text-xs text-stone-400 font-mono">2023 — 2025</span>
+                        <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2023 — 2025</span>
                     </div>
-                    <div class="space-y-3 text-stone-600">
-                        <p>Designed & Developed key legacy components of multiple OpenG2P modules like Social Registry and PBMS upon which the modern OpenG2P modules derive from.</p>
-                        <p>Also developed boilerplate python modules which act as base for multiple OpenG2P modules.</p>
-                        <p>Designed deployment architecture and developed scripts and helm charts which are used to deploy OpenG2P modules, just by a single-click through the UI</p>
-                        <p>Worked on integrating OpenG2P with other platforms like MOSIP, Mifos, OpenCRVS, Mojaloop.</p>
-                    </div>
+                    <ul class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light space-y-2 list-disc list-inside marker:text-zinc-400 dark:marker:text-zinc-600">
+                        <li>Architected key legacy foundation modules for OpenG2P Social Registry (SR) and Program and Beneficiary Management System (PBMS), which the modern OpenG2P modules derive from.</li>
+                        <li>Created core reusable Python boilerplate SDKs serving as the software foundation across multiple OpenG2P ecosystem modules.</li>
+                        <li>Designed automated Kubernetes cloud-native deployment pipelines, interactive Helm configurations, and single-click UI deployment workflows.</li>
+                        <li>Engineered interoperability bridges connecting OpenG2P with MOSIP, Mifos, OpenCRVS, and Mojaloop platforms.</li>
+                    </ul>
                 </div>
 
-                <div class="space-y-6">
-                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                <!-- Role 2 -->
+                <div class="relative pl-7 space-y-3">
+                    <div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-white dark:ring-[#09090b]"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
                         <div>
-                            <h3 class="font-medium text-stone-900">Software Development Engineer — MOSIP</h3>
-                            <p class="text-xs text-stone-500">Full-time · Bengaluru, India</p>
+                            <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100">Software Development Engineer · MOSIP</h3>
+                            <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">Bengaluru, India</p>
                         </div>
-                        <span class="text-xs text-stone-400 font-mono">2021 — 2023</span>
+                        <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2021 — 2023</span>
                     </div>
-                    <div class="space-y-3 text-stone-600">
-                        <p>Designed a modern Kubernetes Deployment architecture for MOSIP modules.</p>
-                        <p>Developed a framework for generating and displaying reports and based on real-time data from the system.</p>
-                        <p>Worked on integrating MOSIP with other platforms like OpenCRVS and OpenG2P on all applicable integration points.</p>
-                    </div>
+                    <ul class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light space-y-2 list-disc list-inside marker:text-zinc-400 dark:marker:text-zinc-600">
+                        <li>Designed high-availability Kubernetes deployment architecture across all core MOSIP modules (microservices).</li>
+                        <li>Engineered real-time data streaming and reporting engine for operational telemetry, audit & system performance metrics.</li>
+                        <li>Implemented cross-platform integration points connecting MOSIP with OpenCRVS and OpenG2P national digital stack integrations.</li>
+                    </ul>
                 </div>
+
             </div>
         </section>
 
-        <!-- Other Minor Works -->
+        <!-- Technical Skills Matrix -->
         <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Other Works</h2>
-            <div class="space-y-6 text-sm font-light">
-                <div class="space-y-1">
-                    <h3 class="font-medium text-stone-900"><a href="https://github.com/lalithkota/csnel" target="_blank" class="hover:underline">Csnel</a></h3>
-                    <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                        Builds and runs unikernels written in Rust. Unikernels are single-process programs where kernel itself is the user application.
-                    </p>
+            <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Capabilities & Skillset</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+
+                <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
+                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Languages</span>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">Python, Rust, JavaScript / TypeScript, Java, Jinja, Bash</p>
                 </div>
+
+                <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
+                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Backend & Frameworks</span>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">FastAPI, Django, Odoo, REST APIs, Inversion of Control (IoC)</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
+                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">DevOps & Cloud</span>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">Kubernetes, Helm, Docker, AWS, Linux Kernel, CI/CD Pipelines</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
+                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Databases & Infrastructure</span>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">PostgreSQL, MySQL, Redis, SQLite, SQLAlchemy, Cryptography</p>
+                </div>
+
             </div>
         </section>
 
         <!-- Qualifications -->
-        <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Qualifications</h2>
-            <div class="space-y-6 text-sm font-light">
-                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 pt-2 border-t border-stone-200/60">
-                    <div>
-                        <h3 class="font-medium text-stone-900">Master of Technology (Integrated M.Tech with B.Tech) in Electronics & Communication Engineering</h3>
-                        <p class="text-xs text-stone-500">International Institute of Information Technology, Bangalore</p>
-                    </div>
-                    <span class="text-xs text-stone-400 font-mono">Graduated</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Skills -->
-        <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">Technical Skills</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 text-sm font-light text-stone-600">
+        <section class="space-y-4">
+            <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Education</h2>
+            <div class="p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Languages</span>
-                    <p>Python, Java, JavaScript / TypeScript, Rust, Jinja, Bash</p>
+                    <h3 class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Integrated M.Tech in Electronics & Communication Engineering</h3>
+                    <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">International Institute of Information Technology, Bangalore (IIITB)</p>
                 </div>
-                <div>
-                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Frameworks & Backend</span>
-                    <p>FastAPI, Odoo, Django, RESTful APIs</p>
-                </div>
-                <div>
-                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Databases & Storage</span>
-                    <p>PostgreSQL, MySQL, SQLite, Redis, SQLAlchemy</p>
-                </div>
-                <div>
-                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">DevOps & Cloud</span>
-                    <p>Docker, Kubernetes, Helm, AWS, Linux, Git, CI/CD pipelines</p>
-                </div>
-                <div>
-                    <span class="text-xs font-semibold text-stone-800 uppercase tracking-wider block mb-1">Architecture & Concepts</span>
-                    <p>Microservices, System Design, Distributed Systems, Inversion of Control (IoC), Cryptography </p>
-                </div>
+                <span class="text-xs font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-200 dark:border-emerald-800/40 self-start sm:self-auto">Graduated</span>
             </div>
         </section>
 
         <!-- Footer -->
-        <section class="pb-12 scroll-mt-10">
-            <footer class="pt-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-400 border-t border-stone-200/60">
-                <p>© 2026 Kota Lalith. Licensed under <a href="LICENSE" class="underline underline-offset-2 hover:text-stone-600 transition-colors">CC-BY-SA-4.0</a>.</p>
-            </footer>
-        </section>
+        <footer class="pt-10 border-t border-zinc-200 dark:border-zinc-800/60 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-500">
+            <p>© 2026 Kota Lalith. <a href="LICENSE" class="hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors underline underline-offset-2">CC-BY-SA-4.0</a></p>
+            <p class="text-zinc-400 dark:text-zinc-600">Hyderabad, India</p>
+        </footer>
 
     </div>
+
 </body>
 </html>

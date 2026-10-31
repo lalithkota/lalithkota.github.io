@@ -4,96 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lalith Kota</title>
+    <script>
+        // Synchronize initial theme with system preference immediately before render
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        // Listen for live system theme changes (desktop and mobile OS auto-switch)
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Newsreader', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f5f5f4;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d6d3d1;
-            border-radius: 9999px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #a8a29e;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        html.dark ::-webkit-scrollbar-track { background: #121110; }
+        html.dark ::-webkit-scrollbar-thumb { background: #292524; border-radius: 9999px; }
+        html:not(.dark) ::-webkit-scrollbar-track { background: #faf9f5; }
+        html:not(.dark) ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 9999px; }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 antialiased selection:bg-amber-200 selection:text-amber-900 min-h-screen">
-    <div class="max-w-4xl mx-auto px-6 sm:px-12 md:px-16 py-10 sm:py-16 space-y-16 sm:space-y-20">
+<body class="bg-[#faf9f5] dark:bg-[#121110] text-stone-800 dark:text-stone-300 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-stone-200 dark:selection:bg-stone-800 transition-colors duration-200">
+
+    <main class="max-w-xl mx-auto px-6 py-20 sm:py-32 w-full space-y-12">
 
         <!-- Header -->
-        <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200/80 pb-6">
-            <div>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl font-light text-stone-900 tracking-tight leading-[1.15]">
-                    <span class="font-semibold decoration-amber-300 decoration-4">Lalith Kota</span>
-                </h1>
-            </div>
-
-            <!-- Location & Socials -->
-            <div class="flex flex-col sm:items-end text-xs sm:text-sm text-stone-500 space-y-1.5 font-light">
-                <span class="inline-flex items-center gap-1.5 text-stone-600">
-                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                    India
-                </span>
-                <div class="flex items-center gap-3 pt-0.5">
-                    <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">GitHub</a>
-                    <span class="text-stone-300">/</span>
-                    <a href="https://in.linkedin.com/in/lalith-kota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 transition-colors underline underline-offset-4 decoration-stone-300 hover:decoration-stone-600">LinkedIn</a>
-                </div>
-            </div>
+        <header class="space-y-2">
+            <h1 class="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-stone-900 dark:text-stone-100">
+                Lalith Kota
+            </h1>
+            <!-- <p class="text-sm text-stone-500 dark:text-stone-400 font-light">
+                Hyderabad, India
+            </p> -->
         </header>
 
-        <!-- About -->
-        <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase">About</h2>
-            <div class="gap-8 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
-                <p>
-                    Software Development Engineer by profession. Pop culture aficionado. Love eating, sleeping and repeating.
-                    I watch movies with passion and play a videogames in my free time.
-                </p>
-            </div>
+        <!-- Intro -->
+        <section class="space-y-6 text-base sm:text-lg leading-relaxed text-stone-700 dark:text-stone-300 font-light">
+            <p>
+                Hello! I’m Lalith—a pop culture aficionado, movie enthusiast, and casual gamer. In my personal time, I love eating, sleeping, repeating, and exploring great stories across screen and sound.
+            </p>
+            <p>
+                By profession, I work as a Software Development Engineer, spending my days building cloud-native infrastructure, open-source libraries, and backend systems.
+            </p>
         </section>
 
-        <!-- Work -->
-         <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase"><a href="portfolio" target="_blank" class="hover:underline">Work</a></h2>
-            <div class="gap-8 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
-                <p>
-                    If you want to know more about my work, profession and technical experience, visit my <a href="portfolio" target="_blank" class="hover:underline">portfolio</a>.
-                </p>
-            </div>
-        </section>
-
-        <!-- Blog -->
-         <section class="space-y-6">
-            <h2 class="text-xs font-semibold tracking-widest text-amber-800 uppercase"><a href="blog" target="_blank" class="hover:underline">Blog</a></h2>
-            <div class="gap-8 text-stone-600 leading-relaxed font-light text-sm sm:text-base">
-                <p>
-                    Take a look at my <a href="blog" target="_blank" class="hover:underline">blog</a>.
-                </p>
-            </div>
+        <!-- Navigation Links -->
+        <section class="pt-6 border-t border-stone-200/80 dark:border-stone-800">
+            <nav class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-stone-600 dark:text-stone-400 font-medium">
+                <a href="portfolio-index.html" class="hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 hover:decoration-stone-800 dark:hover:decoration-stone-300 transition-colors">Portfolio</a>
+                <a href="blog" class="hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 hover:decoration-stone-800 dark:hover:decoration-stone-300 transition-colors">Blog</a>
+                <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 hover:decoration-stone-800 dark:hover:decoration-stone-300 transition-colors">GitHub ↗</a>
+                <a href="https://in.linkedin.com/in/lalith-kota" target="_blank" rel="noopener noreferrer" class="hover:text-stone-900 dark:hover:text-stone-100 underline underline-offset-4 decoration-stone-300 dark:decoration-stone-700 hover:decoration-stone-800 dark:hover:decoration-stone-300 transition-colors">LinkedIn ↗</a>
+            </nav>
         </section>
 
         <!-- Footer -->
-        <section class="pb-12 scroll-mt-10">
-            <footer class="pt-10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-stone-400 border-t border-stone-200/60">
-                <p>© 2026 Kota Lalith. Licensed under <a href="LICENSE" class="underline underline-offset-2 hover:text-stone-600 transition-colors">CC-BY-SA-4.0</a>.</p>
-                <p class="font-mono text-[11px] text-stone-400">Hyderabad, India</p>
-            </footer>
-        </section>
+        <footer class="pt-8 text-xs text-stone-400 dark:text-stone-500 font-light flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Kota Lalith · Licensed under <a href="LICENSE" class="underline underline-offset-2 hover:text-stone-600 dark:hover:text-stone-300">CC-BY-SA-4.0</a></p>
+            <p class="text-zinc-400 dark:text-zinc-600">Hyderabad, India</p>
+        </footer>
 
-    </div>
+    </main>
+
 </body>
 </html>
