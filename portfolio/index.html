@@ -61,7 +61,7 @@
 
             <!-- Navigation Links -->
             <nav class="flex items-center gap-5 text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-                <a href="/" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Home</a>
+                <a href="../" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">Home</a>
                 <a href="." class="text-emerald-600 dark:text-emerald-400 font-semibold border-b border-emerald-600 dark:border-emerald-400 pb-0.5">Portfolio</a>
                 <div class="h-3 w-px bg-zinc-300 dark:bg-zinc-800 mx-1"></div>
                 <a href="https://github.com/lalithkota" target="_blank" rel="noopener noreferrer" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">GitHub ↗</a>
@@ -120,42 +120,65 @@
         <!-- Experience Timeline -->
         <section class="space-y-6">
             <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Experience</h2>
-            <div class="space-y-8 relative before:absolute before:inset-0 before:left-[7px] before:w-px before:bg-zinc-200 dark:before:bg-zinc-800">
+
+            <div class="space-y-8 relative before:absolute before:inset-0 before:left-[5px] before:w-px before:bg-zinc-200 dark:before:bg-zinc-800">
 
                 <!-- Role 1 -->
-                <div class="relative pl-7 space-y-3">
-                    <div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-[#09090b]"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                        <div>
-                            <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100">Senior Software Development Engineer · OpenG2P</h3>
-                            <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">Bengaluru, India</p>
+                <details class="group relative pl-7 transition-all [&::-webkit-details-marker]:hidden">
+                    <summary class="cursor-pointer list-none select-none">
+                        <div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-[#09090b] transition-transform group-hover:scale-125"></div>
+
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="space-y-0.5">
+                                <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    Senior Software Development Engineer <span class="text-zinc-400 font-normal">· OpenG2P</span>
+                                </h3>
+                                <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                                    Bengaluru, India · <span class="text-zinc-400 dark:text-zinc-500">2023 — 2025</span>
+                                </p>
+                            </div>
+
+                            <svg class="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
                         </div>
-                        <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2023 — 2025</span>
-                    </div>
-                    <ul class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light space-y-2 list-disc list-inside marker:text-zinc-400 dark:marker:text-zinc-600">
+                    </summary>
+
+                    <ul class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light space-y-2 list-disc list-inside marker:text-zinc-400 dark:marker:text-zinc-600">
                         <li>Architected key legacy foundation modules for OpenG2P Social Registry (SR) and Program and Beneficiary Management System (PBMS), which the modern OpenG2P modules derive from.</li>
                         <li>Created core reusable Python boilerplate SDKs serving as the software foundation across multiple OpenG2P ecosystem modules.</li>
                         <li>Designed automated Kubernetes cloud-native deployment pipelines, interactive Helm configurations, and single-click UI deployment workflows.</li>
                         <li>Engineered interoperability bridges connecting OpenG2P with MOSIP, Mifos, OpenCRVS, and Mojaloop platforms.</li>
                     </ul>
-                </div>
+                </details>
 
                 <!-- Role 2 -->
-                <div class="relative pl-7 space-y-3">
-                    <div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-white dark:ring-[#09090b]"></div>
-                    <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                        <div>
-                            <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100">Software Development Engineer · MOSIP</h3>
-                            <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">Bengaluru, India</p>
+                <details class="group relative pl-7 transition-all [&::-webkit-details-marker]:hidden">
+                    <summary class="cursor-pointer list-none select-none">
+                        <div class="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-zinc-400 dark:bg-zinc-600 ring-4 ring-white dark:ring-[#09090b] transition-transform group-hover:scale-125"></div>
+
+                        <div class="flex items-start justify-between gap-4">
+                            <div class="space-y-0.5">
+                                <h3 class="text-base font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    Software Development Engineer <span class="text-zinc-400 font-normal">· MOSIP</span>
+                                </h3>
+                                <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                                    Bengaluru, India · <span class="text-zinc-400 dark:text-zinc-500">2021 — 2023</span>
+                                </p>
+                            </div>
+
+                            <svg class="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
                         </div>
-                        <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">2021 — 2023</span>
-                    </div>
-                    <ul class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light space-y-2 list-disc list-inside marker:text-zinc-400 dark:marker:text-zinc-600">
+                    </summary>
+
+                    <ul class="mt-3 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-light space-y-2 list-disc list-inside marker:text-zinc-400 dark:marker:text-zinc-600">
                         <li>Designed high-availability Kubernetes deployment architecture across all core MOSIP modules (microservices).</li>
                         <li>Engineered real-time data streaming and reporting engine for operational telemetry, audit & system performance metrics.</li>
                         <li>Implemented cross-platform integration points connecting MOSIP with OpenCRVS and OpenG2P national digital stack integrations.</li>
                     </ul>
-                </div>
+                </details>
 
             </div>
         </section>
@@ -167,42 +190,56 @@
 
                 <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
                     <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Languages</span>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light">Python, Rust, JavaScript / TypeScript, Java, Jinja, Bash</p>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">Python, Java, JavaScript / TypeScript, Jinja, Rust, Bash</p>
                 </div>
 
                 <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
-                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Backend & Frameworks</span>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light">FastAPI, Django, Odoo, REST APIs, Inversion of Control (IoC)</p>
+                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Frameworks</span>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">FastAPI, Springboot, Odoo, Django, React, Next.js</p>
                 </div>
 
                 <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
                     <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">DevOps & Cloud</span>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light">Kubernetes, Helm, Docker, AWS, Linux Kernel, CI/CD Pipelines</p>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">Kubernetes, Helm, Docker, AWS & GCP, XCP-ng</p>
                 </div>
 
                 <div class="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 space-y-2">
-                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Databases & Infrastructure</span>
-                    <p class="text-zinc-600 dark:text-zinc-400 font-light">PostgreSQL, MySQL, Redis, SQLite, SQLAlchemy, Cryptography</p>
+                    <span class="text-xs font-mono text-zinc-900 dark:text-zinc-200 uppercase tracking-wider block">Databases, Storage & Cache</span>
+                    <p class="text-zinc-600 dark:text-zinc-400 font-light">PostgreSQL, OpenSearch, Redis, Kafka</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- Qualifications -->
+        <!-- Education / Qualifications -->
         <section class="space-y-4">
             <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Education</h2>
-            <div class="p-5 rounded-xl bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <div>
-                    <h3 class="text-sm font-medium text-zinc-900 dark:text-zinc-100">Integrated M.Tech in Electronics & Communication Engineering</h3>
-                    <p class="text-xs font-mono text-zinc-500 dark:text-zinc-400">International Institute of Information Technology, Bangalore (IIITB)</p>
-                </div>
-                <span class="text-xs font-mono text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-200 dark:border-emerald-800/40 self-start sm:self-auto">Graduated</span>
+
+            <div class="space-y-3">
+                <details class="group transition-all [&::-webkit-details-marker]:hidden" open>
+                    <summary class="flex items-center justify-between w-full cursor-pointer select-none text-xs sm:text-sm font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                            <span>Master of Technology (Integrated M.Tech with B.Tech)</span>
+                        </div>
+
+                        <svg class="w-4 h-4 text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-200 transition-transform duration-200 group-open:rotate-180 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </summary>
+
+                    <div class="pl-3.5 mt-2 space-y-1 text-xs text-zinc-600 dark:text-zinc-400 font-light">
+                        <p class="text-zinc-700 dark:text-zinc-300">Electronics & Communication Engineering</p>
+                        <p class="text-zinc-500 dark:text-zinc-400">International Institute of Information Technology, Bangalore (IIITB)</p>
+                        <p class="font-mono text-zinc-400 dark:text-zinc-500 text-[11px] pt-0.5">2016 — 2021 · Graduated</p>
+                    </div>
+                </details>
             </div>
         </section>
 
         <!-- Footer -->
         <footer class="pt-10 border-t border-zinc-200 dark:border-zinc-800/60 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-500">
-            <p>© 2026 Kota Lalith. <a href="LICENSE" class="hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors underline underline-offset-2">CC-BY-SA-4.0</a></p>
+            <p>© 2026 Kota Lalith. <a href="../LICENSE" class="hover:text-zinc-800 dark:hover:text-zinc-300 transition-colors underline underline-offset-2">CC-BY-SA-4.0</a></p>
             <p class="text-zinc-400 dark:text-zinc-600">Hyderabad, India</p>
         </footer>
 
